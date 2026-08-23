@@ -1,0 +1,258 @@
+<svg viewBox="0 0 1280 760" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fafafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="incomeArea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="expenseArea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#f43f5e" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.06"/>
+    </filter>
+    <radialGradient id="glow1" cx="100%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0%" cy="100%" r="60%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="760" fill="url(#bg)"/>
+  <rect width="1280" height="760" fill="url(#glow1)"/>
+  <rect width="1280" height="760" fill="url(#glow2)"/>
+
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="240" height="760" fill="#ffffff" opacity="0.7"/>
+  <line x1="240" y1="0" x2="240" y2="760" stroke="#e2e8f0"/>
+
+  <!-- Logo -->
+  <rect x="24" y="24" width="36" height="36" rx="10" fill="#4f46e5"/>
+  <path d="M33 38 h18 M33 44 h12 M33 50 h15" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="70" y="42" font-size="15" font-weight="700" fill="#0f172a">SpendLens</text>
+  <text x="70" y="58" font-size="11" fill="#64748b">Personal finance, clarified</text>
+
+  <!-- Nav items -->
+  <g font-size="13.5" fill="#64748b">
+    <!-- Active: Dashboard -->
+    <rect x="14" y="96" width="212" height="36" rx="8" fill="#4f46e5"/>
+    <circle cx="30" cy="114" r="5.5" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <text x="48" y="118" fill="#ffffff" font-weight="600">Dashboard</text>
+
+    <rect x="14" y="138" width="212" height="36" rx="8" fill="transparent"/>
+    <path d="M27 110 m0 0" />
+    <rect x="25.5" y="108.5" width="10" height="12" rx="2" fill="none" stroke="#64748b" stroke-width="1.6" transform="translate(0,46)"/>
+    <text x="48" y="160">Transactions</text>
+
+    <rect x="14" y="180" width="212" height="36" rx="8"/>
+    <path d="M30 195 l3 5 l5 -10" stroke="#64748b" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="48" y="202">Insights</text>
+
+    <rect x="14" y="222" width="212" height="36" rx="8"/>
+    <path d="M30 244 v-8 m-4 4 l4 -4 l4 4" stroke="#64748b" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="48" y="244">Upload</text>
+  </g>
+
+  <!-- Sidebar footer -->
+  <line x1="14" y1="700" x2="226" y2="700" stroke="#e2e8f0"/>
+  <text x="24" y="720" font-size="11" font-weight="600" fill="#0f172a">AI categorization</text>
+  <text x="24" y="736" font-size="10.5" fill="#94a3b8">Drop a CSV/PDF, Claude tags</text>
+  <text x="24" y="748" font-size="10.5" fill="#94a3b8">every transaction in seconds.</text>
+
+  <!-- Header -->
+  <text x="276" y="56" font-size="22" font-weight="600" fill="#0f172a">Dashboard</text>
+  <text x="276" y="80" font-size="13" fill="#64748b">A quick read on cash flow, categories, and what stood out this period.</text>
+
+  <!-- Range switcher -->
+  <rect x="1056" y="44" width="200" height="36" rx="9" fill="#ffffff" stroke="#e2e8f0"/>
+  <rect x="1062" y="50" width="45" height="24" rx="6" fill="#4f46e5"/>
+  <text x="1084.5" y="66" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">30D</text>
+  <text x="1133" y="66" font-size="11" font-weight="600" fill="#64748b" text-anchor="middle">90D</text>
+  <text x="1180" y="66" font-size="11" font-weight="600" fill="#64748b" text-anchor="middle">YTD</text>
+  <text x="1230" y="66" font-size="11" font-weight="600" fill="#64748b" text-anchor="middle">ALL</text>
+
+  <!-- KPI cards row -->
+  <g filter="url(#card-shadow)">
+    <!-- Income -->
+    <rect x="276" y="108" width="232" height="100" rx="16" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="296" y="134" font-size="12" font-weight="600" fill="#64748b">Income</text>
+    <rect x="448" y="120" width="36" height="36" rx="9" fill="#f1f5f9"/>
+    <path d="M460 144 l8 -8 m-4 0 h4 v4" stroke="#10b981" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="296" y="170" font-size="24" font-weight="600" fill="#10b981">$8,420.00</text>
+    <text x="296" y="190" font-size="11" fill="#94a3b8">85 transactions</text>
+
+    <!-- Spending -->
+    <rect x="524" y="108" width="232" height="100" rx="16" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="544" y="134" font-size="12" font-weight="600" fill="#64748b">Spending</text>
+    <rect x="696" y="120" width="36" height="36" rx="9" fill="#f1f5f9"/>
+    <path d="M708 136 l8 8 m0 -4 v4 h-4" stroke="#f43f5e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="544" y="170" font-size="24" font-weight="600" fill="#f43f5e">$5,142.18</text>
+    <text x="544" y="190" font-size="11" fill="#94a3b8">across 14 categories</text>
+
+    <!-- Net -->
+    <rect x="772" y="108" width="232" height="100" rx="16" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="792" y="134" font-size="12" font-weight="600" fill="#64748b">Net</text>
+    <rect x="944" y="120" width="36" height="36" rx="9" fill="#f1f5f9"/>
+    <path d="M955 144 a6 4 0 1 1 12 0 v0 a3 3 0 1 1 -6 0 z" stroke="#64748b" stroke-width="1.6" fill="none"/>
+    <text x="792" y="170" font-size="24" font-weight="600" fill="#10b981">+$3,277.82</text>
+    <text x="792" y="190" font-size="11" fill="#94a3b8">38.9% savings rate</text>
+
+    <!-- Top category -->
+    <rect x="1020" y="108" width="236" height="100" rx="16" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="1040" y="134" font-size="12" font-weight="600" fill="#64748b">Top category</text>
+    <rect x="1208" y="120" width="36" height="36" rx="9" fill="#f1f5f9"/>
+    <rect x="1217" y="129" width="18" height="14" rx="2" fill="none" stroke="#64748b" stroke-width="1.6"/>
+    <text x="1040" y="170" font-size="20" font-weight="600" fill="#0f172a">Housing</text>
+    <text x="1040" y="190" font-size="11" fill="#94a3b8">$1,600.00 · 31% of spend</text>
+  </g>
+
+  <!-- Cash-flow chart -->
+  <g filter="url(#card-shadow)">
+    <rect x="276" y="232" width="608" height="276" rx="16" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="296" y="262" font-size="15" font-weight="600" fill="#0f172a">Cash flow</text>
+    <text x="296" y="280" font-size="12" fill="#94a3b8">Daily income vs expense over the selected range.</text>
+
+    <!-- Grid -->
+    <g stroke="#e2e8f0" stroke-dasharray="3 3">
+      <line x1="316" y1="320" x2="864" y2="320"/>
+      <line x1="316" y1="370" x2="864" y2="370"/>
+      <line x1="316" y1="420" x2="864" y2="420"/>
+      <line x1="316" y1="470" x2="864" y2="470"/>
+    </g>
+
+    <!-- X labels -->
+    <g font-size="10" fill="#94a3b8" text-anchor="middle">
+      <text x="350" y="488">May 1</text>
+      <text x="450" y="488">May 6</text>
+      <text x="550" y="488">May 11</text>
+      <text x="650" y="488">May 16</text>
+      <text x="750" y="488">May 21</text>
+      <text x="850" y="488">May 26</text>
+    </g>
+
+    <!-- Y labels -->
+    <g font-size="10" fill="#94a3b8" text-anchor="end">
+      <text x="310" y="324">$200</text>
+      <text x="310" y="374">$150</text>
+      <text x="310" y="424">$100</text>
+      <text x="310" y="474">$50</text>
+    </g>
+
+    <!-- Income area -->
+    <path d="M316,470 L356,330 L396,440 L436,450 L476,425 L516,455 L556,400 L596,460 L636,445 L676,460 L716,415 L756,455 L796,440 L836,460 L864,455 L864,470 L316,470 Z"
+          fill="url(#incomeArea)"/>
+    <path d="M316,470 L356,330 L396,440 L436,450 L476,425 L516,455 L556,400 L596,460 L636,445 L676,460 L716,415 L756,455 L796,440 L836,460 L864,455"
+          fill="none" stroke="#10b981" stroke-width="2.2" stroke-linejoin="round"/>
+
+    <!-- Expense area -->
+    <path d="M316,470 L356,450 L396,420 L436,425 L476,400 L516,380 L556,410 L596,395 L636,360 L676,385 L716,420 L756,395 L796,380 L836,410 L864,395 L864,470 L316,470 Z"
+          fill="url(#expenseArea)"/>
+    <path d="M316,470 L356,450 L396,420 L436,425 L476,400 L516,380 L556,410 L596,395 L636,360 L676,385 L716,420 L756,395 L796,380 L836,410 L864,395"
+          fill="none" stroke="#f43f5e" stroke-width="2.2" stroke-linejoin="round"/>
+
+    <!-- Legend -->
+    <g font-size="11" fill="#64748b">
+      <circle cx="700" cy="262" r="4" fill="#10b981"/>
+      <text x="710" y="265">Income</text>
+      <circle cx="780" cy="262" r="4" fill="#f43f5e"/>
+      <text x="790" y="265">Expense</text>
+    </g>
+  </g>
+
+  <!-- Category pie -->
+  <g filter="url(#card-shadow)">
+    <rect x="900" y="232" width="356" height="276" rx="16" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="920" y="262" font-size="15" font-weight="600" fill="#0f172a">Spending by category</text>
+    <text x="920" y="280" font-size="12" fill="#94a3b8">Where your outflows actually go.</text>
+
+    <!-- Donut: simulate slices with stroke-dasharray on a circle -->
+    <g transform="translate(1010, 380)">
+      <circle r="56" cx="0" cy="0" fill="none" stroke="#a855f7" stroke-width="22" stroke-dasharray="120 352" transform="rotate(-90)"/>
+      <circle r="56" cx="0" cy="0" fill="none" stroke="#22c55e" stroke-width="22" stroke-dasharray="80 352" stroke-dashoffset="-120" transform="rotate(-90)"/>
+      <circle r="56" cx="0" cy="0" fill="none" stroke="#f97316" stroke-width="22" stroke-dasharray="60 352" stroke-dashoffset="-200" transform="rotate(-90)"/>
+      <circle r="56" cx="0" cy="0" fill="none" stroke="#3b82f6" stroke-width="22" stroke-dasharray="45 352" stroke-dashoffset="-260" transform="rotate(-90)"/>
+      <circle r="56" cx="0" cy="0" fill="none" stroke="#ec4899" stroke-width="22" stroke-dasharray="30 352" stroke-dashoffset="-305" transform="rotate(-90)"/>
+      <circle r="56" cx="0" cy="0" fill="none" stroke="#eab308" stroke-width="22" stroke-dasharray="17 352" stroke-dashoffset="-335" transform="rotate(-90)"/>
+      <text x="0" y="-2" font-size="11" fill="#94a3b8" text-anchor="middle">spent</text>
+      <text x="0" y="14" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">$5,142</text>
+    </g>
+
+    <!-- Legend list -->
+    <g font-size="11.5">
+      <g transform="translate(1100, 320)">
+        <circle r="4" fill="#a855f7"/>
+        <text x="12" y="4" fill="#0f172a">Housing</text>
+        <text x="135" y="4" text-anchor="end" fill="#94a3b8">34%</text>
+      </g>
+      <g transform="translate(1100, 344)">
+        <circle r="4" fill="#22c55e"/>
+        <text x="12" y="4" fill="#0f172a">Groceries</text>
+        <text x="135" y="4" text-anchor="end" fill="#94a3b8">23%</text>
+      </g>
+      <g transform="translate(1100, 368)">
+        <circle r="4" fill="#f97316"/>
+        <text x="12" y="4" fill="#0f172a">Restaurants</text>
+        <text x="135" y="4" text-anchor="end" fill="#94a3b8">17%</text>
+      </g>
+      <g transform="translate(1100, 392)">
+        <circle r="4" fill="#3b82f6"/>
+        <text x="12" y="4" fill="#0f172a">Transport</text>
+        <text x="135" y="4" text-anchor="end" fill="#94a3b8">12%</text>
+      </g>
+      <g transform="translate(1100, 416)">
+        <circle r="4" fill="#ec4899"/>
+        <text x="12" y="4" fill="#0f172a">Subscriptions</text>
+        <text x="135" y="4" text-anchor="end" fill="#94a3b8">8%</text>
+      </g>
+      <g transform="translate(1100, 440)">
+        <circle r="4" fill="#eab308"/>
+        <text x="12" y="4" fill="#0f172a">Shopping</text>
+        <text x="135" y="4" text-anchor="end" fill="#94a3b8">5%</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Insights row -->
+  <g filter="url(#card-shadow)">
+    <rect x="276" y="532" width="980" height="208" rx="16" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="296" y="562" font-size="15" font-weight="600" fill="#0f172a">
+      ✨ Insights
+    </text>
+    <text x="296" y="580" font-size="12" fill="#94a3b8">Automatic call-outs from your transactions.</text>
+
+    <!-- Insight 1 -->
+    <rect x="296" y="600" width="296" height="120" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="316" y="624" font-size="13" font-weight="700" fill="#0f172a">Where you spent the most</text>
+    <rect x="492" y="610" width="80" height="22" rx="11" fill="#eef2ff" stroke="#c7d2fe"/>
+    <text x="532" y="625" font-size="11" font-weight="600" fill="#4338ca" text-anchor="middle">$1,600.00</text>
+    <text x="316" y="652" font-size="12" fill="#64748b">You spent the most at</text>
+    <text x="316" y="672" font-size="12" fill="#0f172a" font-weight="600">Apartment Rent</text>
+    <text x="316" y="690" font-size="11" fill="#94a3b8">Rent dominates — typical for May.</text>
+
+    <!-- Insight 2 -->
+    <rect x="616" y="600" width="296" height="120" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="636" y="624" font-size="13" font-weight="700" fill="#0f172a">Savings rate</text>
+    <rect x="812" y="610" width="80" height="22" rx="11" fill="#ecfdf5" stroke="#a7f3d0"/>
+    <text x="852" y="625" font-size="11" font-weight="600" fill="#047857" text-anchor="middle">38.9%</text>
+    <text x="636" y="652" font-size="12" fill="#64748b">Solid — you’re keeping more than</text>
+    <text x="636" y="670" font-size="12" fill="#64748b">20% of what comes in.</text>
+    <text x="636" y="692" font-size="11" fill="#94a3b8">Trend: +4 pp vs. last month.</text>
+
+    <!-- Insight 3 -->
+    <rect x="936" y="600" width="300" height="120" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="956" y="624" font-size="13" font-weight="700" fill="#0f172a">Possible recurring charge</text>
+    <rect x="1132" y="610" width="84" height="22" rx="11" fill="#fdf2f8" stroke="#fbcfe8"/>
+    <text x="1174" y="625" font-size="11" font-weight="600" fill="#be185d" text-anchor="middle">3× $15.49</text>
+    <text x="956" y="652" font-size="12" fill="#0f172a" font-weight="600">Netflix</text>
+    <text x="956" y="670" font-size="12" fill="#64748b">charged ~$15.49 on 3 occasions.</text>
+    <text x="956" y="692" font-size="11" fill="#94a3b8">Still worth it?</text>
+  </g>
+</svg>

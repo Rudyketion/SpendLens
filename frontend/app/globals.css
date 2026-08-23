@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 250 250 252;
+  --foreground: 15 23 42;
+  --card: 255 255 255;
+  --card-foreground: 15 23 42;
+  --muted: 241 245 249;
+  --muted-foreground: 100 116 139;
+  --border: 226 232 240;
+  --accent: 241 245 249;
+  --accent-foreground: 15 23 42;
+  --primary: 79 70 229;
+  --primary-foreground: 255 255 255;
+  --radius: 0.75rem;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.dark {
+  --background: 9 9 11;
+  --foreground: 241 245 249;
+  --card: 24 24 27;
+  --card-foreground: 241 245 249;
+  --muted: 39 39 42;
+  --muted-foreground: 161 161 170;
+  --border: 39 39 42;
+  --accent: 39 39 42;
+  --accent-foreground: 241 245 249;
+  --primary: 129 140 248;
+  --primary-foreground: 9 9 11;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 100% -10%, rgb(99 102 241 / 0.10), transparent 60%),
+    radial-gradient(800px 500px at -10% 110%, rgb(16 185 129 / 0.08), transparent 60%),
+    rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Pretty scrollbar */
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb { background: rgb(var(--border)); border-radius: 8px; }
+*::-webkit-scrollbar-thumb:hover { background: rgb(var(--muted-foreground) / 0.5); }

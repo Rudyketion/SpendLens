@@ -1,0 +1,36 @@
+services:
+  backend:
+    build: ./backend
+    container_name: spendlens-backend
+    ports:
+      - "8000:8000"
+    environment:
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      ANTHROPIC_MODEL: ${ANTHROPIC_MODEL:-claude-haiku-4-5-20251001}
+      DATABASE_URL: sqlite:///./data/spendlens.db
+      CORS_ORIGINS: http://localhost:3000
+    volumes:
+      - backend-data:/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/healthz')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        # Baked into the Next.js build so /api/* rewrites point at the
+        # backend service on the docker network — not at localhost.
+        NEXT_PUBLIC_API_URL: http://backend:8000
+    container_name: spendlens-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://backend:8000
+    depends_on:
+      - backend
+
+volumes:
+  backend-data:
